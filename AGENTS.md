@@ -9,10 +9,11 @@
 ```
 D:\opencode_data\
 ├── AGENTS.md                          # 本檔案（專案說明）
-├── README.md                          # 懶人包索引（如存在）
+├── README.md                          # 懶人包索引
 ├── 00-環境建置 (1).md                 # 懶人包 #00：環境建置
 ├── 01-連接-NotebookLM (1).md          # 懶人包 #01：連接 NotebookLM
 ├── 08-安裝FB頻道摘要Skill (1).md      # 懶人包 #08：FB 頻道摘要 Skill
+├── 00-新手安裝指南 (1).md              # 新手指南：從零開始安裝 OpenCode
 ├── OpenCode-十節課教案-教師大綱.md    # 十節課教師大綱
 ├── OpenCode-十節課教案-教師手冊.md    # 十節課教師手冊（含完整教學引導）
 └── OpenCode-十節課教案-學生講義.md    # 十節課學生講義（含實作活動）
@@ -69,7 +70,7 @@ D:\opencode_data\
 
 ## GitHub 相關資訊
 
-- 此目錄非 Git 倉庫
+- 此目錄已初始化為 Git 倉庫，遠端為 https://github.com/1110011-maker/opencode-teaching.git
 - 懶人包 #00 會安裝 Git 與 GitHub CLI
 - 懶人包 #01 與 GitHub 連接相關
 - 教材中的連結指向 `./README.md`（懶人包索引）

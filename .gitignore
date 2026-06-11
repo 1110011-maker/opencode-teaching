@@ -1,0 +1,22 @@
+# OS
+thumbs.db
+.DS_Store
+Desktop.ini
+
+# Editor
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Temp
+tmp/
+temp/
+*.tmp
+
+# Python (uv)
+__pycache__/
+*.pyc
+.venv/
