@@ -11,6 +11,7 @@ D:\opencode_data\
 ├── .gitignore                          # Git 忽略規則
 ├── AGENTS.md                           # 本檔案（專案說明）
 ├── README.md                           # 懶人包索引
+├── SOP-教學工作流程指引.md             # SOP 教學工作流程指引
 │
 ├── 00-新手安裝指南.md                  # 新手指南：從零開始安裝 OpenCode
 │
