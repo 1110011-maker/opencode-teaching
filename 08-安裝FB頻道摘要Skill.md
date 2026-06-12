@@ -303,6 +303,7 @@ FB 內容要怎麼提供？
    > 3. 圖片與表格：所有 `<img>` 加入 `.img-fluid`。嚴禁在 style 中寫死寬高。提供精確 alt 描述，裝飾性圖片用 `alt=""`。圖片含表格/文字需在下方產生對應 HTML 表格或語意化摘要。表格 caption 用 `style="caption-side: top;"`.
    > 4. 色彩與樣式：自訂色彩對比度須符合 WCAG 2.2 AAA 7:1。優先使用 Bootstrap 5 類別。最小化 inline CSS。
    > 5. 內容忠實：不得自行增減原始內容中的連結或檔案數量。
+> 6. 字元編碼：在 `<head>` 中加入 `<meta charset="utf-8">`，確保中文字在 GitHub Pages 上正確顯示。
    >
    > Output: 僅輸出純 HTML 程式碼片段，包裝在單一 ```html 區塊中。禁止任何問候、解釋或結語。
    >

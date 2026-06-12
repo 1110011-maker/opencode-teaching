@@ -217,7 +217,7 @@ else
   mkdir -p ~/Documents/github-test
   cd ~/Documents/github-test
   git init
-  echo '<!DOCTYPE html><html><body><h1>Hello！GitHub 連接成功！</h1></body></html>' > index.html
+  echo '<!DOCTYPE html><html><head><meta charset="utf-8"></head><body><h1>Hello！GitHub 連接成功！</h1></body></html>' > index.html
   git add .
   git commit -m "Initial commit"
   gh repo create github-test --public --source=. --push
