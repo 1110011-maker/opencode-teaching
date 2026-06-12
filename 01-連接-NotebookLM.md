@@ -1,6 +1,6 @@
 ---
 title: 'OpenCode 懶人包 #01：連接 NotebookLM'
-date: '2026-04-04'
+date: '2026-06-10'
 type: 懶人包
 version: v0.5
 status: 強化版
