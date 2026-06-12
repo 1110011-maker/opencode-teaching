@@ -2,8 +2,8 @@
 title: 'OpenCode 懶人包 #01：連接 NotebookLM'
 date: '2026-04-04'
 type: 懶人包
-version: v0.3
-status: 初版（實作後更新）
+version: v0.5
+status: 強化版
 tags:
   - OpenCode
   - 懶人包
@@ -12,8 +12,8 @@ tags:
 ---
 # OpenCode 懶人包 #01：連接 Google NotebookLM
 
-> 版本：v0.3
-> 更新日期：2026-06-06
+> 版本：v0.5
+> 更新日期：2026-06-10
 
 > 📌 **本懶人包可獨立執行**：會自動檢查並安裝所需工具，不需要先看過其他懶人包。你只要確認下方「先備條件」即可開始。
 
@@ -76,9 +76,11 @@ OpenCode ←(MCP 協定)→ nlm (翻譯官) ←(Google 登入)→ NotebookLM
 
 ### 步驟零：環境檢查
 
-> 請 OpenCode 在開始安裝前，先自動確認以下所有項目。
-> 如果有任何一項不符合，請先告知使用者問題所在，並引導解決後再繼續。
-> **不要跳過任何一項檢查，不要假設環境正常。**
+> 🔁 **重複執行安全檢查**：如果所有環境條件都符合，此步驟直接跳過。
+
+請 OpenCode 在開始安裝前，先自動確認以下所有項目。
+如果有任何一項不符合，請先告知使用者問題所在，並引導解決後再繼續。
+**不要跳過任何一項檢查，不要假設環境正常。**
 
 1. **確認作業系統**：執行系統指令確認是 Windows / macOS / Linux，後續所有指令請根據實際的作業系統選擇正確版本執行
 2. **確認 uv 已安裝**：執行 `uv --version`，如果未安裝，步驟一會自動安裝
@@ -174,6 +176,8 @@ nlm setup list
 
 ### 步驟四：建立本地資料夾
 
+> 🔁 **重複執行安全檢查**：如果目標資料夾結構已存在，此步驟直接跳過。
+
 請根據使用者的作業系統，在文件資料夾下建立以下目錄結構：
 
 ```
@@ -216,19 +220,49 @@ Documents/
 
 ## 完成！接下來你可以這樣用
 
-連接成功後，你隨時可以在 OpenCode 裡用自然語言操控 NotebookLM：
+連接成功後，你隨時可以在 OpenCode 裡用自然語言操控 NotebookLM。以下是 20 個實際使用範例：
 
-| 你說的話 | NotebookLM 會做的事 | 存放位置 |
-|----------|-------------------|---------|
-| 「幫我用這份 PDF 建一個 notebook」 | 建立 notebook + 上傳 PDF 作為資料來源 | — |
-| 「幫我產生教學簡報」 | 生成 Slide Deck（可匯出 .pptx） | slides/ |
-| 「幫我做一張資訊圖表」 | 生成 Infographic（多種風格可選） | infographics/ |
-| 「幫我產生音訊概覽（Podcast）」 | 生成 Audio Overview | audio/ |
-| 「幫我產生影片概覽」 | 生成 Video Overview（Cinematic / Explainer / Brief） | video/ |
-| 「幫我產生報告並匯出成文件」 | 生成 Report，匯出為 Google Docs | docs/ |
-| 「幫我做數據表格並匯出試算表」 | 生成 Data Table，匯出為 Google Sheets | sheets/ |
-| 「幫我產生心智圖」 | 生成 Mind Map | mindmaps/ |
-| 「幫我出測驗題 / 閃卡」 | 生成 Quiz / Flashcards | quizzes/ |
+### 📥 類別一：內容來源（5 個範例）
+
+| # | 你說的話 | NotebookLM 會做的事 | 適用時機 |
+|---|---------|-------------------|---------|
+| 1 | 「幫我用這份 PDF 建一個 notebook」 | 建立 notebook + 上傳 PDF 作為資料來源 | 拿到教材 PDF 時 |
+| 2 | 「幫我把這個 YouTube 影片加到 notebook」 | 新增 YouTube URL 來源，自動轉錄 | 教學影片分析 |
+| 3 | 「幫我把這個網頁內容加入 notebook」 | 新增網頁 URL 來源，自動抓取內容 | 參考文章整理 |
+| 4 | 「幫我把這段文字貼進 notebook」 | 以文字 source 加入 notebook | 手動複製的內容 |
+| 5 | 「幫我把 Google Doc 加入 notebook」 | 以 Drive 文件加入 notebook | 團隊共筆文件分析 |
+
+### 🎨 類別二：產出類型（5 個範例）
+
+| # | 你說的話 | NotebookLM 會做的事 | 存放位置 |
+|---|---------|-------------------|---------|
+| 6 | 「幫我產生教學簡報」 | 生成 Slide Deck（可匯出 .pptx） | slides/ |
+| 7 | 「幫我做一張資訊圖表」 | 生成 Infographic（手繪/專業/教材風） | infographics/ |
+| 8 | 「幫我產出 Podcast 音檔」 | 生成 Audio Overview | audio/ |
+| 9 | 「幫我產出報告並匯出 Google 文件」 | 生成 Briefing Doc，自動匯出 Google Docs | docs/ |
+| 10 | 「幫我出 10 題測驗卷」 | 生成 Quiz / Flashcards | quizzes/ |
+
+### 📚 類別三：跨筆記本操作（5 個範例）
+
+| # | 你說的話 | 運作方式 | 適用時機 |
+|---|---------|---------|---------|
+| 11 | 「幫我查詢上週那本筆記本的內容」 | 跨 notebook 查詢，列出所有筆記本 | 需要回顧舊資料 |
+| 12 | 「幫我把這三份資料合併到同一本 notebook」 | 將多個 source 加入同一 notebook | 主題資料彙整 |
+| 13 | 「幫我幫筆記本加上標籤分類」 | 使用 label 工具分類 sources | 大量資料管理 |
+| 14 | 「幫我一次產出全部五種成品」 | 批次產出簡報+圖表+Podcast+報告+影片 | 完整素材產出 |
+| 15 | 「幫我比較這兩本 notebook 的內容差異」 | 交叉查詢兩本 notebook 並統整結果 | 版本比較或對照 |
+
+### 🔗 類別四：進階整合（5 個範例）
+
+| # | 你說的話 | 流程說明 | 適用時機 |
+|---|---------|---------|---------|
+| 16 | 「幫我把 FB 摘要存到 NotebookLM 再產出簡報」 | 先用 FB 摘要 Skill → 自動餵入 NotebookLM → 產出簡報 | #08 FB 摘要進階用法 |
+| 17 | 「把這本書轉成技能後，再用 NotebookLM 加強分析」 | Book-to-Skill 萃取 → 書本內容餵入 NotebookLM 分析 | #05 Book-to-Skill 混搭 |
+| 18 | 「幫我把 NotebookLM 的摘要存進 Obsidian」 | NotebookLM 產出 → 用 Obsidian 工具寫入 vault | #03/#04 第二大腦整合 |
+| 19 | 「設定每天早上自動摘要我的筆記本」 | 結合 startup/shutdown → 排程批次產出 | 習慣自動化 |
+| 20 | 「幫我開共享筆記本讓團隊協作」 | 建立 notebook → 邀請協作者加入 | 團隊協同研究 |
+
+這 20 個範例涵蓋了從單一操作到跨工具整合的所有使用場景。隨著你對 NotebookLM 越來越熟悉，還可以將 NotebookLM 與 Obsidian、GitHub、FB 摘要等其他懶人包自由組合。
 
 ---
 
@@ -259,7 +293,12 @@ Documents/
 | 瀏覽器沒有自動開啟 | 手動開啟瀏覽器登入 Google，或嘗試 `nlm login --manual` |
 | OpenCode 看不到 NotebookLM 工具 | 確認有執行 `nlm setup add opencode`，並完全關閉再重啟 OpenCode |
 | Windows 上指令格式錯誤 | 確認使用 PowerShell 而非 CMD，或改用 Git Bash |
-| （實作後持續補充） | |
+| Studio 產出很慢或逾時 | NotebookLM 生成需要時間，可提供連結讓使用者自行查看 |
+| 一個 notebook 能加多少 source？ | 每本 notebook 最多 50 個 source，每個 source 最多 50 萬字 |
+| 可以產出英文以外的內容嗎？ | 可以。在產出時指定 `language="zh-TW"` 或其他語言參數 |
+| 下載的檔案放在哪裡？ | 預設在 `Documents/NotebookLM/` 下對應子資料夾 |
+| 如何刪除 notebook？ | 對 OpenCode 說：「幫我刪除測試筆記本」 |
+| 登錯 Google 帳號怎麼辦？ | 執行 `nlm logout` 清除登入狀態，再重新 `nlm login` |
 
 ---
 
@@ -270,7 +309,7 @@ Documents/
 | 2026-04-04 | v0.1 | 初版，根據官方文件建立基本流程 |
 | 2026-04-04 | v0.2 | 加入環境檢查、復原機制、跨平台支援、常見問題擴充 |
 | 2026-06-06 | v0.3 | 全面更新 Claude Code → OpenCode |
-| — | v1.0（預定） | 待經多人實測後發布穩定版本 |
+| 2026-06-10 | v0.5 | 深度擴充：20 個使用範例（4 類）、🔁 重複執行檢查（步驟零、四）、FAQ 6→12 題 |
 
 ---
 
